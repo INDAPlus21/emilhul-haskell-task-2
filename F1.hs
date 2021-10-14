@@ -46,3 +46,7 @@ skyffla (x : xs) = concat (second (x : xs) : [skyffla (second xs)])
     second [] = []
     second (x : y : xs) = x : second xs
     second (x : xs) = [x]
+
+sum' :: (Integral n, Num n) => n -> n -> n
+sum' s 0 = s
+sum' s n = sum' (s + n) (pred n)
